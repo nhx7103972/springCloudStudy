@@ -5,11 +5,14 @@ spring:
     name: config-server
   cloud:
     config:
+      # ≤÷ø‚∑÷÷ß
       label: master
       server:
         git:
+          # git≤÷ø‚µÿ÷∑
           uri: https://github.com/nhx7103972/springCloudStudy
-          searchPaths: respo
+          # ≤÷ø‚¬∑æ∂
+          searchPaths: springCloud.config/respo
           username: 
           password: 
 
