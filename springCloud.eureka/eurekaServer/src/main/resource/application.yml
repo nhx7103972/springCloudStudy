@@ -1,0 +1,21 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10 #服务的心跳时间30毫秒
+#    preferIpAddress: true #使用ip地址不使用主机名 ，用单机实现集群的时候，不能为true
+#    ipAddress: 127.0.0.1
+    hostname: eureka1
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/,http://eureka2:8762/eureka/
+#   defaultZone=
+#   http://master:7998/eureka/,http://backup:7999/eureka/,
+#   可以通过这种方式，向其他非自身的所有server注册中心注册，即server之间互相注册，实现集群方式
+spring:
+  application:
+    name: eureka-server
+
+

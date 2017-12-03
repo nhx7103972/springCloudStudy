@@ -1,0 +1,23 @@
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10 #服务的心跳时间
+    preferIpAddress: true #使用ip地址不使用主机名
+#    ipAddress: 127.0.0.1
+    hostname: 127.0.0.1
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    registryFetchIntervalSeconds: 2 #间隔多久去拉取服务注册信息
+    serviceUrl:
+      defaultZone: http://eureka1:8761/eureka/,http://eureka2:8762/eureka/
+#   defaultZone:
+#   http://master:7998/eureka/,http://backup:7999/eureka/,
+#   可以通过这种方式，向多个server注册中心注册，即所有server注册中心注册，实现集群方式
+server:
+  port: 8800
+spring:
+  application:
+    name: service-hi
+
+
+

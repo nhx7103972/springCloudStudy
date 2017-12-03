@@ -1,0 +1,14 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+#   defaultZone:
+#   http://master:7998/eureka/,http://backup:7999/eureka/,
+#   可以通过这种方式，向多个server注册中心注册，即所有server注册中心注册，实现集群方式
+server:
+  port: 8800
+spring:
+  application:
+    name: service-hi
+
+
